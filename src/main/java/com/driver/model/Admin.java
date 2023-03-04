@@ -17,7 +17,8 @@ public class Admin {
 
 
     @OneToMany(mappedBy = "admin",cascade = CascadeType.ALL)
-    private List<ServiceProvider> serviceProvider;
+    private List<ServiceProvider> serviceProviders;
+
 
 
     public int getId() {
@@ -47,11 +48,11 @@ public class Admin {
     public Admin() {
     }
 
-    public List<ServiceProvider> getServiceProvider() {
-        return serviceProvider;
+    public List<ServiceProvider> getServiceProviders() {
+        return serviceProviders;
     }
 
-    public void setServiceProvider(List<ServiceProvider> serviceProvider) {
-        this.serviceProvider = serviceProvider;
+    public void setServiceProviders(List<ServiceProvider> serviceProviders) {
+        this.serviceProviders = serviceProviders;
     }
 }
