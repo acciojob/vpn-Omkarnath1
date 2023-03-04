@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
             user.setConnected(false); //vpn main goal
 
             String code = country.getCode()+"."+userRepository3.save(user).getId();
-            user.setOriginalIP(code); //new
+            user.setOriginalIp(code); //new
 
             userRepository3.save(user);
 

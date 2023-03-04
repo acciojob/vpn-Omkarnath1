@@ -18,9 +18,9 @@ public class User {
 
     private String password;
 
-    private String maskedIP;
+    private String maskedIp;
 
-    private String originalIP;
+    private String originalIp;
 
     private Boolean connected;
 
@@ -102,22 +102,21 @@ public class User {
         this.password = password;
     }
 
-    public String getMaskedIP() {
-        return maskedIP;
+    public String getMaskedIp() {
+        return maskedIp;
     }
 
-    public void setMaskedIP(String maskedIP) {
-        this.maskedIP = maskedIP;
+    public void setMaskedIp(String maskedIp) {
+        this.maskedIp = maskedIp;
     }
 
-    public String getOriginalIP() {
-        return originalIP;
+    public String getOriginalIp() {
+        return originalIp;
     }
 
-    public void setOriginalIP(String originalIP) {
-        this.originalIP = originalIP;
+    public void setOriginalIp(String originalIp) {
+        this.originalIp = originalIp;
     }
-
 
     public User() {
     }

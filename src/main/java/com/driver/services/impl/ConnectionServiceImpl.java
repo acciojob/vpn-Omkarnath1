@@ -22,7 +22,7 @@ public class ConnectionServiceImpl implements ConnectionService {
     @Override
     public User connect(int userId, String countryName) throws Exception{
         User user = userRepository2.findById(userId).get();
-        if(user. getMaskedIP()!=null){
+        if(user. getMaskedIp()!=null){
             throw new Exception("Already connected");
         }
         else if(countryName.equalsIgnoreCase(user.getOriginalCountry().getCountryName().toString())){
@@ -59,7 +59,7 @@ public class ConnectionServiceImpl implements ConnectionService {
                 String cc = country.getCode();
                 int givenId = serviceProvider.getId();
                 String mask = cc+"."+givenId+"."+userId;
-                user.setMaskedIP(mask);
+                user.setMaskedIp(mask);
                 user.setConnected(true);
                 user.getConnectionList().add(connection);
 
@@ -79,7 +79,7 @@ public class ConnectionServiceImpl implements ConnectionService {
         if(user.getConnected()==false){
             throw new Exception("Already disconnected");
         }
-        user.setMaskedIP(null);
+        user.setMaskedIp(null);
         user.setConnected(false);
         userRepository2.save(user);
         return user;
@@ -90,8 +90,8 @@ public class ConnectionServiceImpl implements ConnectionService {
         User user = userRepository2.findById(senderId).get();
         User user1 = userRepository2.findById(receiverId).get();
 
-        if(user1.getMaskedIP()!=null){
-            String str = user1.getMaskedIP();
+        if(user1.getMaskedIp()!=null){
+            String str = user1.getMaskedIp();
             String cc = str.substring(0,3); //chopping country code = cc
 
             if(cc.equals(user.getOriginalCountry().getCode()))
